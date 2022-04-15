@@ -9,6 +9,9 @@ trait ValidationTrait
     public function validateRegister($data)
     {
         $validator = Validator::make($data, [
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'phone' => 'required|max:255',
             'email' => 'email|required|unique:users|max:255',
             'password' => 'required|max:255',
         ]);
